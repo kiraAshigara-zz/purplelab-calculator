@@ -1,0 +1,145 @@
+.center-v {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.navbar-fixed {
+    height: 100px;
+}
+
+.navbar-fixed nav {
+    height: inherit;
+    background-color: #7fbbbe;
+}
+
+.navbar-fixed nav .nav-wrapper {
+    text-align: center;
+}
+
+.help-icon {
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.form {
+    padding: 15px;
+}
+
+.form .item-form label {
+    font-size: 20px;
+    color: #878787;
+    float: left;
+    width: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.form .item-form {
+    margin-bottom: 10px;
+    float: left;
+    width: 100%;
+}
+
+.form .item-form:last-child {
+    margin-bottom: 0;
+}
+
+.list {
+    width: 50%;
+    height: 30px;
+    overflow: hidden;
+    float: right;
+}
+
+.list select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: inherit;
+
+    background-image: url(/img/arrow.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 15px 15px;
+    border-bottom: 1px solid #eaebeb;
+
+    font-size: 18px;
+    color: #5d5d5d;
+}
+
+.list select:focus {
+    outline: none;
+}
+
+.separator {
+    float: left;
+    width: 100%;
+    background-color: #7fbbbe;
+    height: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.item-result {
+    float: left;
+    width: 100%;
+}
+
+.item-result label {
+    float: left;
+    width: 50%;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-result input {
+    float: left;
+    width: 50%;
+    text-align: right;
+    margin: 0;
+    height: 25px;
+    border-bottom: 1px solid #eaebeb;
+}
+
+.item-result input:focus {
+    border-bottom: 1px solid #eaebeb !important;
+    box-shadow: none !important;
+}
+
+.total {
+    float: left;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.total label {
+    float: left;
+    width: 50%;
+    color: #5d5d5d;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.total .price {
+    float: right;
+    width: 50%;
+    background-color: #7fbbbe;
+    text-align: center;
+    color: white;
+    padding: 16px;
+    font-size: 40px;
+}
