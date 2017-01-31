@@ -3,7 +3,7 @@ var DB_CONNECTION = mysql.createPool({
     connectionLimit: 10,
     host: 'localhost',
     user: 'root',
-    password: 'dev',
+    password: 'andres89',
     database: 'calculatorDB'
 });
 
