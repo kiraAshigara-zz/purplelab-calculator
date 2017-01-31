@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'NeutraText-Demi';
+    src: url("/fonts/neutratext-demi-opentype.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body{
+    font-family: NeutraText-Demi;
+}
+
+
 .center-v {
     position: relative;
     top: 50%;
