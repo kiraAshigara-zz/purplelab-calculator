@@ -143,6 +143,10 @@ var PurpleLabCalculator = (function () {
             var term_discount = $('.term-list option:selected').data('term').term_discount;
             var num_of_users = $('.num_of_users_list option:selected').data('num_of_users').user_multiplier;
 
+            if (business_type === '8'){
+            	num_of_users = $('.num_of_users_list option:selected').data('num_of_users').academic_multiplier;
+            }
+
             $.ajax({
                 url: '/purplelab/calculate?business_type={0}&business_size={1}&geo_discount={2}&therapeutic_area={3}&reports={4}&reports_retrievers={5}&term={6}&term_discount={7}&num_of_users={8}'.format(
                     business_type,
