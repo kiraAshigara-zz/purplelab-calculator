@@ -39,7 +39,7 @@ var PurpleLabCalculator = (function () {
             url: '/purplelab/info',
             dataType: 'json'
         }).done(function (info) {
-            $('.business-type-list').append('<option empty-option></option>');
+            $('.business-type-list').append('<option empty-option>select option...</option>');
             var option;
 
             $.each(info.business, function (i, business) {
@@ -53,7 +53,7 @@ var PurpleLabCalculator = (function () {
                 }
             });
 
-            $('.geo-list').append('<option empty-option></option>');
+            $('.geo-list').append('<option empty-option>select option...</option>');
 
             $.each(info.geo, function (i, item) {
                 option = $('<option>{0}</option>'.format(item.geo));
@@ -62,7 +62,7 @@ var PurpleLabCalculator = (function () {
                 $('.geo-list').append(option);
             });
 
-            $('.therapeutic_area-list').append('<option empty-option></option>');
+            $('.therapeutic_area-list').append('<option empty-option>select option...</option>');
 
             $.each(info.therapeutic_area, function (i, item) {
                 option = $('<option>{0}</option>'.format(item.tp_class));
@@ -71,7 +71,7 @@ var PurpleLabCalculator = (function () {
                 $('.therapeutic_area-list').append(option);
             });
 
-            $('.reports-list').append('<option empty-option></option>');
+            $('.reports-list').append('<option empty-option>select option...</option>');
 
             $.each(info.reports, function (i, item) {
                 option = $('<option>{0}</option>'.format(item.report));
@@ -80,7 +80,7 @@ var PurpleLabCalculator = (function () {
                 $('.reports-list').append(option);
             });
 
-            $('.reports_retrievers-list').append('<option empty-option></option>');
+            $('.reports_retrievers-list').append('<option empty-option>select option...</option>');
 
             $.each(info.reports_retrievers, function (i, item) {
                 option = $('<option>{0}</option>'.format(item.retreiver));
@@ -89,7 +89,7 @@ var PurpleLabCalculator = (function () {
                 $('.reports_retrievers-list').append(option);
             });
 
-            $('.term-list').append('<option empty-option></option>');
+            $('.term-list').append('<option empty-option>select option...</option>');
 
             $.each(info.term, function (i, item) {
                 option = $('<option>{0}</option>'.format(item.term));
@@ -98,7 +98,7 @@ var PurpleLabCalculator = (function () {
                 $('.term-list').append(option);
             });
 
-            $('.num_of_users_list').append('<option empty-option></option>');
+            $('.num_of_users_list').append('<option empty-option>select option...</option>');
 
             $.each(info.num_of_users, function (i, item) {
                 option = $('<option>{0}</option>'.format(item.users));
@@ -114,7 +114,7 @@ var PurpleLabCalculator = (function () {
 
     function loadBusinessSize(size) {
         $('.business-size-list').empty();
-        $('.business-size-list').append('<option empty-option></option>');
+        $('.business-size-list').append('<option empty-option>select option...</option>');
 
         var option;
 
