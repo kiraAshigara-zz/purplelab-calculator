@@ -4,7 +4,7 @@ var DB_CONNECTION = mysql.createPool({
     host: 'localhost',
     user: 'root',
     password: 'dev',
-    database: 'asdsd'
+    database: 'calculatorDB'
 });
 
 module.exports = DB_CONNECTION;
