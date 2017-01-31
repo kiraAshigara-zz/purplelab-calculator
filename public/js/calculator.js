@@ -157,7 +157,9 @@ var PurpleLabCalculator = (function () {
                 ),
                 dataType: 'json'
             }).done(function (result) {
-                console.log(result);
+                $('.base-annual').val('$' + result.base_annual_subscription.toLocaleString());
+                $('.price').text('$' + result.discounted_annual_subscription.toLocaleString());
+                $('.full-term-pricing').val('$' + result.full_term_pricing.toLocaleString());
             }).fail(function (error) {
                 console.error(error);
             });

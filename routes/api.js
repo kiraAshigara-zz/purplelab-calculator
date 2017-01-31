@@ -59,15 +59,43 @@ router.get('/purplelab/info', function (req, res, next) {
 });
 
 router.get('/purplelab/calculate', function (req, res, next) {
-    var business_type = req.params.business_type;
-    var business_size = req.params.business_size;
-    var geo_discount = req.params.geo_discount;
-    var therapeutic_area = req.params.therapeutic_area;
-    var reports = req.params.reports;
-    var reports_retrievers = req.params.reports_retrievers;
-    var term = req.params.term;
-    var term_discount = req.params.term_discount;
-    var num_of_users = req.params.num_of_users;
+    var business_type = parseFloat(req.query.business_type);
+    var business_size = parseFloat(req.query.business_size);
+    var geo_discount = parseFloat(req.query.geo_discount);
+    var therapeutic_area = parseFloat(req.query.therapeutic_area);
+    var reports = parseFloat(req.query.reports);
+    var reports_retrievers = parseFloat(req.query.reports_retrievers);
+    var term = parseFloat(req.query.term);
+    var term_discount = parseFloat(req.query.term_discount);
+    var num_of_users = parseFloat(req.query.num_of_users);
+
+    var result = {};
+    var minimun_value;
+
+    mysql.query(Query.base_annual(business_type, business_size)).then(function (rows) {
+        result.base_annual_subscription = Math.round(rows[0].base_annual_subscription);
+        return mysql.query(Query.minimun_value(business_type));
+    }).then(function (rows) {
+        minimun_value = rows[0]['MIN(BASE_PRICING.base_annual_subscription)'];
+
+        var base1 =
+            result.base_annual_subscription *
+            geo_discount *
+            therapeutic_area *
+            reports *
+            reports_retrievers *
+            term_discount *
+            num_of_users;
+
+        result.discounted_annual_subscription = Math.max(base1, minimun_value);
+
+        result.full_term_pricing = Math.round(result.discounted_annual_subscription * term);
+        result.discounted_annual_subscription = Math.round(result.discounted_annual_subscription);
+
+        Response._200(res, result);
+    }).catch(function (error) {
+        Response._500(res, error);
+    });
 });
 
 module.exports = router;

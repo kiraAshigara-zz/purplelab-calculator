@@ -29,6 +29,17 @@ var Query = {
     num_of_users: function () {
         var query = 'select * from USERS_TBL;';
         return query;
+    },
+    base_annual: function (business_type, business_size) {
+        var query = 'select base_annual_subscription from BASE_PRICING where biz_type_fk = {0} and biz_size_fk = {1}';
+        return query.format(business_type, business_size);
+    },
+    minimun_value: function (business_type) {
+        var query = 'select MIN(BASE_PRICING.base_annual_subscription) from BASE_PRICING' +
+            ' join BUSINESS_SIZE_TBL on BASE_PRICING.biz_size_fk = BUSINESS_SIZE_TBL.id' +
+            ' join BUSINESS_TYPE_TBL on BASE_PRICING.biz_type_fk = BUSINESS_TYPE_TBL.id' +
+            ' where BASE_PRICING.biz_type_fk = {0}';
+        return query.format(business_type);
     }
 };
 
